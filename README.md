@@ -1,1 +1,3 @@
-This repo houses my personal website.
+This repo houses and deploys my personal website.
+
+It lives at [swain.codes](https://swain.codes).
