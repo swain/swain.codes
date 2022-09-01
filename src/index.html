@@ -43,6 +43,16 @@
         color: black;
       }
 
+      #social-row {
+        flex-direction: row;
+      }
+
+      #social-icon {
+        width: 32px;
+        height: 32px;
+        margin-right: 1em;
+      }
+
       /* Desktop Styles */
       @media (min-width: 600px) {
         body {
@@ -73,8 +83,20 @@
     <br />
     <br />
     <span
-      >If you'd like to get in touch, please
-      <a href="mailto:swain.molster@gmail.com"> send me an email</a>.
+      >If you'd like to get in touch, feel free to
+      <a href="mailto:swain.molster@gmail.com">send me an email</a>.
     </span>
+
+    <br />
+    <br />
+
+    <div id="social-row">
+      <a href="https://www.github.com/swain"
+        ><img id="social-icon" src="./img/github.png"
+      /></a>
+      <a href="https://www.linkedin.com/in/swain-molster/"
+        ><img id="social-icon" src="./img/linkedin.png"
+      /></a>
+    </div>
   </body>
 </html>
