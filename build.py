@@ -43,7 +43,7 @@ for filename in filenames:
   post_html = markdown(post.content)
   templated = template(post_template, {
     'title': post.metadata["title"],
-    'body': post_html
+    'content': post_html
   })
   target_filepath = f"dist/posts/{filename.replace('.md', ".html")}"
   write_file(target_filepath, templated)
