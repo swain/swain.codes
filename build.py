@@ -1,4 +1,5 @@
 #! /usr/bin/env python3
+from datetime import datetime
 from os import getcwd, listdir, makedirs
 from shutil import copytree, rmtree
 import frontmatter
@@ -27,6 +28,10 @@ def copy_and_template(source_path: str, dest_path: str, values: dict[str, str]):
   templated = template(source, values)
   write_file(dest_path, templated)
 
+def to_readable_date(day: str):
+  dt = datetime.strptime(day, "%Y-%m-%d")
+  return dt.strftime("%B %-d, %Y")
+
 rmtree(f"{base}/dist")
 makedirs(f"{base}/dist", exist_ok=True)
 makedirs(f"{base}/dist/posts", exist_ok=True)
@@ -34,20 +39,26 @@ copytree(f"{base}/src/img", f"{base}/dist/img")
 copytree(f"{base}/src/styles", f"{base}/dist/styles")
 
 copy_and_template("src/index.html", "dist/index.html", {})
-# TODO: template out the various entries
-copy_and_template("src/posts.html", "dist/posts.html", {})
 
+post_anchors: list[str] = []
 post_template = read_file("src/post.html")
-filenames = listdir(f"{getcwd()}/src/posts")
-for filename in filenames:
+for filename in listdir(f"{base}/src/posts"):
   post = frontmatter.load(f"{base}/src/posts/{filename}")
   post_html = markdown(post.content, extensions=["fenced_code", "codehilite"])
   templated = template(post_template, {
     'title': post.metadata["title"],
+    'date': to_readable_date(filename[0:10]),
     'content': post_html
   })
-  target_filepath = f"dist/posts/{filename.replace('.md', ".html")}"
+  slug = filename[11:].replace(".md", "")
+  target_filepath = f"dist/posts/{slug}.html"
   write_file(target_filepath, templated)
-  print(f"Generated {filename}")
+  post_anchors.append(
+    f'<a href="/posts/{slug}" class="postlink">{post.metadata["title"]}</a>'
+  )
 
-print("Done!")
+copy_and_template("src/posts.html", "dist/posts.html", {
+  "posts": "\n".join(post_anchors)
+})
+
+print("Built!")

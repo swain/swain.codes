@@ -19,11 +19,13 @@
   </head>
 
   <body>
+    <header>
+      <a href="/">Home</a> | <a href="/posts">All Posts</a>
+      <p style="color: gray;">{{date}}</p>
+    </header>
     <div>
-    {{content}}
+      <h1 style="margin-top: 0.5em;">{{title}}</h1>
+      {{content}}
     </div>
-    <footer>
-      <div></div>
-    </footer>
   </body>
 </html>

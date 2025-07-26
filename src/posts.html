@@ -15,9 +15,21 @@
     <title>Posts</title>
 
     <link rel="stylesheet" href="./styles/styles.css" />
+    <style>
+      .postlink {
+        margin-bottom: 1em;
+        font-size: 1.2em;
+      }
+    </style>
   </head>
 
   <body>
-    <a href="./posts/test">Tester</a>
+    <header>
+      <a href="/">Home</a> | <a href="/posts">All Posts</a>
+    </header>
+
+    <hr style="width: 100%; max-width: 15em" />
+
+    {{posts}}
   </body>
 </html>
