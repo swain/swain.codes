@@ -15,32 +15,11 @@
     <title>swain.codes</title>
 
     <style>
-      body {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        background-color: #f8f8f8;
-        padding-left: 1em;
-        padding-right: 1em;
-      }
-
       #headshot {
         border-radius: 1em;
         width: 30vw;
         height: 30vw;
         margin-top: 2em;
-        margin-bottom: 2em;
-      }
-
-      span {
-        font-family: "Lato";
-        font-size: 24px;
-        font-weight: 900;
-        color: black;
-      }
-
-      a {
-        color: black;
       }
 
       #social-row {
@@ -61,16 +40,14 @@
 
       /* Desktop Styles */
       @media (min-width: 600px) {
-        body {
-          padding-left: 10%;
-        }
-
         #headshot {
           width: 250px;
           height: 250px;
         }
       }
     </style>
+
+    {{stylesheet}}
   </head>
 
   <body>
@@ -79,13 +56,10 @@
       src="./img/me.jpg"
       alt="A picture of me looking fancier than usual"
     />
-    <span>Hi, I'm Swain! I'm a software engineer. 🙂</span>
-    <br />
-    <br />
-    <span
-      >If you'd like to get in touch, feel free to
+    <h3>Hi, I'm Swain! I'm a software engineer. 🙂</h3>
+    <h3>If you'd like to get in touch, feel free to
       <a href="mailto:swain.molster@gmail.com">send me an email</a>.
-    </span>
+    </h3>
 
     <!-- <br />
     <br />

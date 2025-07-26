@@ -14,65 +14,7 @@
 
     <title>{{title}}</title>
 
-    <style>
-      body {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        background-color: #f8f8f8;
-        padding-left: 1em;
-        padding-right: 1em;
-        font-family: "Lato";
-        color: black;
-      }
-
-      #headshot {
-        border-radius: 1em;
-        width: 30vw;
-        height: 30vw;
-        margin-top: 2em;
-        margin-bottom: 2em;
-      }
-
-      span {
-        font-family: "Lato";
-        font-size: 24px;
-        font-weight: 900;
-        color: black;
-      }
-      
-      a {
-        color: black;
-      }
-
-      #social-row {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-      }
-
-      #social-icon-container {
-        height: 32px;
-        width: 32px;
-        margin-right: 1em;
-      }
-
-      #social-icon {
-        height: 100%;
-      }
-
-      /* Desktop Styles */
-      @media (min-width: 600px) {
-        body {
-          padding-left: 10%;
-        }
-
-        #headshot {
-          width: 250px;
-          height: 250px;
-        }
-      }
-    </style>
+    {{stylesheet}}
   </head>
 
   <body>

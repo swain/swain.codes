@@ -2,7 +2,7 @@
 import asyncio
 import os
 from subprocess import run
-from watchgod import awatch
+from watchfiles import awatch
 
 base = os.getcwd()
 
@@ -10,7 +10,7 @@ def run_build():
   run(f"{base}/build.py")
 
 async def watch_and_build():
-  async for _ in awatch(f"{base}/src"):
+  async for _ in awatch(f"{base}/src", f"{base}/build.py"):
     print("[watcher] Changes detected, reloading!")
     run_build()
 
@@ -34,4 +34,4 @@ async def main():
 try:
   asyncio.run(main())
 except KeyboardInterrupt:
-  print("\n[devserver] Caught Ctrl+C, exiting.")
+  exit(0)
