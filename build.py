@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-from os import getcwd, listdir, makedirs, read, rmdir
+from os import getcwd, listdir, makedirs
 from shutil import copytree, rmtree
 import frontmatter
 from markdown import markdown
