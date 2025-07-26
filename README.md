@@ -2,7 +2,13 @@ This repo houses and deploys my personal website.
 
 It lives at [swain.codes](https://swain.codes).
 
-### Developing Locally
+## Developing Locally
+
+Install dependencies:
+
+```sh
+poetry install
+```
 
 Start the server locally with:
 
@@ -15,3 +21,13 @@ Whenever your changes are finished, be sure to run a build:
 ```sh
 ./build.py
 ```
+
+### Updating Code Highlighting
+
+The code highlighting styles were generated using pygmentize, like so:
+
+```sh
+poetry run pygmentize -S default -f html -a .codehilite > src/styles/codehilite.css
+```
+
+Customize as you'd like!

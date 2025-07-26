@@ -31,21 +31,18 @@ rmtree(f"{base}/dist")
 makedirs(f"{base}/dist", exist_ok=True)
 makedirs(f"{base}/dist/posts", exist_ok=True)
 copytree(f"{base}/src/img", f"{base}/dist/img")
+copytree(f"{base}/src/styles", f"{base}/dist/styles")
 
-basevalues = {
-  "stylesheet": f"<style>\n{read_file("src/styles.css")}\n{read_file("src/codehilite.css")}\n</style>"
-}
-
-copy_and_template("src/index.html", "dist/index.html", basevalues)
+copy_and_template("src/index.html", "dist/index.html", {})
 # TODO: template out the various entries
-copy_and_template("src/posts.html", "dist/posts.html", basevalues)
+copy_and_template("src/posts.html", "dist/posts.html", {})
 
 post_template = read_file("src/post.html")
 filenames = listdir(f"{getcwd()}/src/posts")
 for filename in filenames:
   post = frontmatter.load(f"{base}/src/posts/{filename}")
   post_html = markdown(post.content, extensions=["fenced_code", "codehilite"])
-  templated = template(post_template, basevalues | {
+  templated = template(post_template, {
     'title': post.metadata["title"],
     'content': post_html
   })
