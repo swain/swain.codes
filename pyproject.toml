@@ -7,7 +7,7 @@ authors = [
 ]
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = ["markdown (>=3.8.2,<4.0.0)"]
+dependencies = ["markdown (>=3.8.2,<4.0.0)", "python-frontmatter (>=1.1.0,<2.0.0)"]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

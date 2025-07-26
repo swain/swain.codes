@@ -12,7 +12,7 @@
       href="https://fonts.googleapis.com/css?family=Lato"
     />
 
-    <title>swain.codes</title>
+    <title>{{title}}</title>
 
     <style>
       body {
@@ -22,6 +22,8 @@
         background-color: #f8f8f8;
         padding-left: 1em;
         padding-right: 1em;
+        font-family: "Lato";
+        color: black;
       }
 
       #headshot {
@@ -38,9 +40,9 @@
         font-weight: 900;
         color: black;
       }
-
+      
       a {
-        color: black;
+        color: black
       }
 
       #social-row {
@@ -74,32 +76,6 @@
   </head>
 
   <body>
-    <img
-      id="headshot"
-      src="./img/me.jpg"
-      alt="A picture of me looking fancier than usual"
-    />
-    <span>Hi, I'm Swain! I'm a software engineer. 🙂</span>
-    <br />
-    <br />
-    <span
-      >If you'd like to get in touch, feel free to
-      <a href="mailto:swain.molster@gmail.com">send me an email</a>.
-    </span>
-
-    <!-- <br />
-    <br />
-
-    <span
-      >Or, check out some of my <a href="./posts">writing</a>.
-    </span> -->
-
-    <br />
-    <br />
-
-    <div id="social-row">
-      <a id="social-icon-container" href="https://www.github.com/swain"><img id="social-icon" src="./img/github.png" /></a>
-      <a id="social-icon-container" href="https://www.linkedin.com/in/swain-molster"><img id="social-icon" src="./img/linkedin.png" /></a>
-    </div>
+  {{body}}
   </body>
 </html>
